@@ -8,5 +8,6 @@ Built with:
 HTML, 
 CSS,
 JavaScript,
+TypeScript,
 Angular,
 PHP.
