@@ -1,0 +1,91 @@
+<header>
+    <div class="container1">
+        <div class="title" routerLink="/">
+            <img src="../../../assets/mainpics/logo-removebg-preview.png" alt="">
+            <span>SkyTech</span>
+        </div>
+
+
+        <div class="middle">
+            <div id="searchbar" class="input-group input-group-sm mb-3" style="width:50%;">
+                <input type="text" id="search" class="form-control" placeholder=" Search..."
+                    aria-describedby="inputGroup-sizing-sm" style=" border-radius: 50px 0 0 50px; ">
+                <button (click)="searchProduct()" class="btn"
+                    style="background-color:#f4b33a;  border-radius: 0 50px 50px 0;"><span
+                        style="color:white;">Search</span></button>
+
+            </div>
+        </div>
+
+        <div class="menu">
+            <a href="" class="button" style="padding:0; background-color:black; border:none;">
+
+                <img src="../../../assets/mainpics/icons/menu-svgrepo-com.svg" alt="">
+
+            </a>
+
+
+            <div class="dropdown-content">
+                <p>Menu</p>
+                <a routerLink="/signin">Login</a>
+                <a routerLink="/signup">Signup</a>
+                <a routerLink="/cart" class="margin-bottom:2Em;">Cart</a>
+                <span>Categories</span>
+                <a routerLink="/products/Shopall">shop all</a>
+                <a routerLink="/products/Laptops">Laptops</a>
+                <a routerLink="/products/Accessories">Accessories</a>
+                <a routerLink="/products/Monitors">Monitors</a>
+                <a routerLink="/products/Audio">Audio</a>
+
+            </div>
+        </div>
+
+
+
+
+        <div *ngIf="LoggedIn==true;else elseBlock" class="cart">
+            <div>
+                <a (click)="logout()">
+                    <img src="../../../assets/mainpics/icons/profile-svgrepo-com.svg" alt="">
+
+                    <span>Logout</span>
+
+                </a>
+                <a routerLink="/cart">
+                    <img src="../../../assets/mainpics/icons/cart-svgrepo-com.svg" alt="">
+                    <span>Cart</span>
+                </a>
+            </div>
+
+
+        </div>
+        <ng-template #elseBlock>
+            <div class="cart">
+            <div>
+                <a routerLink="/signin">
+                    <img src="../../../assets/mainpics/icons/profile-svgrepo-com.svg" alt="">
+
+                    <span>Login</span>
+
+                </a>
+                <a disabled>
+                    <img src="../../../assets/mainpics/icons/cart-svgrepo-com.svg" alt="">
+                    <span>Cart</span>
+                </a>
+            </div>
+        </div>
+        </ng-template>
+
+
+
+    </div>
+
+</header>
+<nav>
+    <a routerLink="/products/Shopall">Shop all</a>
+    <a routerLink="/products/Laptops">Laptops</a>
+    <a routerLink="/products/Accessories">Accessories</a>
+    <a routerLink="/products/Monitors">Monitors</a>
+    <a routerLink="/products/Audio">Audio</a>
+</nav>
+<router-outlet></router-outlet>
